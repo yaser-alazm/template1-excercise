@@ -14,6 +14,7 @@ body {
   min-height: 100vh;
   background-color: rgba(255, 255, 255, 0.6);
   transition: 0.3s;
+  font-family: 'Open Sans';
 }
 
 .settings-box.opened {
@@ -42,6 +43,7 @@ body {
 }
 .settings-box .options-box h4 {
   margin: 10px 0;
+  font-size: 14px;
 }
 
 .settings-box .options-box .colors-list {
@@ -83,6 +85,21 @@ body {
 }
 .settings-box .options-box .colors-list li:nth-child(6) {
   background-color: #1ae7ee;
+}
+
+.settings-box .random-background .btn {
+  background-color: var(--main-color);
+  padding: 2px 13px;
+  font-size: 14px;
+  color: #fff;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.settings-box .random-background .btn.active,
+.settings-box .random-background .btn:hover {
+  opacity: 1;
 }
 
 /* End Settings Box */
