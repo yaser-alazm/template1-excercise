@@ -7,7 +7,23 @@ let colorOption = document.querySelector('.settings-box .colors-list li');
 // Settings Box
 // **//**// */ */
 
-//Collapse options sidebar
+// Check for local storage color value
+let colorLocalValue = localStorage.getItem('main-color');
+
+if (colorLocalValue !== null) {
+  document.documentElement.style.setProperty('--main-color', colorLocalValue);
+
+  // remove active class
+  document.querySelectorAll('.colors-list li').forEach((li) => {
+    li.classList.remove('active');
+    // add active class
+    if (li.dataset.color == colorLocalValue) {
+      li.classList.add('active');
+    }
+  });
+}
+
+//Toggle options sidebar
 settingsGearContainer.addEventListener('click', (e) => {
   e.preventDefault();
   settingsGear.classList.toggle('fa-spin');
@@ -23,7 +39,15 @@ colorsArr.forEach((li) => {
       '--main-color',
       e.target.dataset.color,
     );
-    this.classList.add('active');
+    localStorage.setItem('main-color', e.target.dataset.color);
+
+    // Remove active class from all sibilings
+    e.target.parentElement.querySelectorAll('.active').forEach((el) => {
+      el.classList.remove('active');
+    });
+
+    // Add active class to current list element
+    li.classList.add('active');
   });
 });
 

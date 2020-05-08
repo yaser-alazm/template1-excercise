@@ -35,9 +35,13 @@ body {
 
 .settings-box .options-box {
   padding: 20px;
+  text-align: center;
+  margin: 5px;
+  background-color: #d3d3d4;
+  border-radius: 10px;
 }
 .settings-box .options-box h4 {
-  margin: 0;
+  margin: 10px 0;
 }
 
 .settings-box .options-box .colors-list {
@@ -52,11 +56,13 @@ body {
   height: 20px;
   display: inline-block;
   opacity: 0.5;
+  border: solid 2px #d3d3d4;
   cursor: pointer;
 }
 
 .settings-box .options-box .colors-list li.active {
   opacity: 1;
+  border-color: #fff;
 }
 
 .settings-box .options-box .colors-list li:first-child {
